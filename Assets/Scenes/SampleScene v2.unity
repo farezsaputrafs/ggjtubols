@@ -6749,7 +6749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1512228190}
-  whoHasTheBomb: 1
+  whoHasTheBomb: 0
   player1ColTrigger: {fileID: 1159176015}
   player2ColTrigger: {fileID: 1428626481}
   bombPositionOffset: {x: -1.34, y: 0}

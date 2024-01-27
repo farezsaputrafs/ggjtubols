@@ -7,6 +7,7 @@ public class BasicMovement : MonoBehaviour
     public Rigidbody2D rb2d;
     public Rigidbody2D[] rigidbody2Ds;
     public float speedMultiplier;
+    public float bouncebackMultiplier = 10f;
     public P1orP2 p1OrP2 = P1orP2.P1;
 
     [SerializeField]
@@ -54,17 +55,20 @@ public class BasicMovement : MonoBehaviour
             if (other.CompareTag("Player 2 Col")){
                 Debug.Log($"p1 got p2");
                 inputEnabled = false;
-                rb2d.velocity = -rb2d.velocity * 10f;
+                rb2d.velocity = -rb2d.velocity * bouncebackMultiplier;
                 other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
+                other.GetComponentInParent<BasicMovement>().rb2d.velocity = rb2d.velocity;
+                // other.attachedRigidbody.velocity = rb2d.velocity;
             }
         }
         if (p1OrP2 == P1orP2.P2){
             if (other.CompareTag("Player Col")){
                 Debug.Log($"p2 got p1");
                 inputEnabled = false;
-                rb2d.velocity = -rb2d.velocity * 10f;
+                rb2d.velocity = -rb2d.velocity * bouncebackMultiplier;
                 other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
-
+                other.GetComponentInParent<BasicMovement>().rb2d.velocity = rb2d.velocity;
+                // other.transform.GetComponent<Rigidbody2D>().velocity = rb2d.velocity;
             }
         }
 

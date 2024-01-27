@@ -149,7 +149,8 @@ Transform:
   m_LocalPosition: {x: 0.041092835, y: -0.24565797, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1159176016}
   m_Father: {fileID: 680262600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &30850403
@@ -369,7 +370,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 1.9670612, y: -1.9125421}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9659204
+  m_Distance: 0.005
   m_DampingRatio: 0.5
   m_Frequency: 5
 --- !u!231 &89328559
@@ -697,6 +698,53 @@ MonoBehaviour:
   springJoints: []
   peakSpeedVelocity: {x: 0, y: 0}
   peakSpeedVelocityFloat: 9
+--- !u!1 &244951750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244951751}
+  - component: {fileID: 244951752}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244951751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244951750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.41246, y: 2.8684, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1742840817}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244951752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244951750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa31cea9883ee2344abfa57d4eec4ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 59
+  text: {fileID: 1742840815}
 --- !u!1 &300276073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,7 +1652,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 1.8735955, y: 1.7139044}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.8939904
+  m_Distance: 0.005
   m_DampingRatio: 0.5
   m_Frequency: 5
 --- !u!58 &627852168
@@ -1784,7 +1832,6 @@ Transform:
   - {fileID: 714461637}
   - {fileID: 30850402}
   - {fileID: 1131528208}
-  - {fileID: 1159176016}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &680262601
@@ -2585,7 +2632,8 @@ Transform:
   m_LocalPosition: {x: 0.006214447, y: -0.23582688, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1428626482}
   m_Father: {fileID: 1951948610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &973734614
@@ -3034,13 +3082,14 @@ GameObject:
   - component: {fileID: 1159176016}
   - component: {fileID: 1159176017}
   - component: {fileID: 1159176018}
-  m_Layer: 0
+  - component: {fileID: 1159176019}
+  m_Layer: 3
   m_Name: col trigger
-  m_TagString: Player
+  m_TagString: Player Col
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1159176016
 Transform:
   m_ObjectHideFlags: 0
@@ -3049,12 +3098,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159176015}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071069}
+  m_LocalPosition: {x: 0.245658, y: 0.041092843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 680262600}
+  m_Father: {fileID: 30850402}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1159176017
 CircleCollider2D:
@@ -3100,7 +3149,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159176015}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3119,6 +3168,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1159176019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159176015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9af17a7e1eec0449ce44b7a57174d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
+  p1OrP2: 0
+  TriggerEnter2DForwarded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 680262601}
+        m_TargetAssemblyTypeName: BasicMovement, Assembly-CSharp
+        m_MethodName: Z_ForwardedOnTriggerEnter2D
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerExit2DForwarded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 680262601}
+        m_TargetAssemblyTypeName: BasicMovement, Assembly-CSharp
+        m_MethodName: Z_ForwardedOnTriggerExit2D
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  inputEnabled: 1
 --- !u!1 &1182870533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,13 +3639,14 @@ GameObject:
   - component: {fileID: 1428626482}
   - component: {fileID: 1428626483}
   - component: {fileID: 1428626484}
-  m_Layer: 0
+  - component: {fileID: 1428626485}
+  m_Layer: 3
   m_Name: col trigger
-  m_TagString: Player 2
+  m_TagString: Player 2 Col
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1428626482
 Transform:
   m_ObjectHideFlags: 0
@@ -3560,12 +3655,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428626481}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.72056687, w: 0.6933855}
+  m_LocalPosition: {x: 0.23589149, y: -0.0028537363, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1951948610}
+  m_Father: {fileID: 973734613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1428626483
 CircleCollider2D:
@@ -3611,7 +3706,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428626481}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3630,6 +3725,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1428626485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428626481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9af17a7e1eec0449ce44b7a57174d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
+  p1OrP2: 0
+  TriggerEnter2DForwarded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1951948607}
+        m_TargetAssemblyTypeName: BasicMovement, Assembly-CSharp
+        m_MethodName: Z_ForwardedOnTriggerEnter2D
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerExit2DForwarded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1951948607}
+        m_TargetAssemblyTypeName: BasicMovement, Assembly-CSharp
+        m_MethodName: Z_ForwardedOnTriggerExit2D
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  inputEnabled: 1
 --- !u!1 &1608196225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,7 +4413,7 @@ GameObject:
   - component: {fileID: 1742840816}
   - component: {fileID: 1742840815}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TIMER TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4299,17 +4439,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: anjayyyyy
+  m_text: 59
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f3c659180312d9f469113dd2bc422a9d, type: 2}
+  m_sharedMaterial: {fileID: -3194375417897582580, guid: f3c659180312d9f469113dd2bc422a9d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 1583782101
+  m_fontColor: {r: 0.83396226, g: 0.5943952, b: 0.40124595, a: 0.36862746}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4326,14 +4466,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 53.87
+  m_fontSizeBase: 53.87
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4395,7 +4535,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -3194375417897582580, guid: f3c659180312d9f469113dd2bc422a9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4424,16 +4564,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742840814}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19567, y: 0.19567, z: 0.19567}
+  m_LocalScale: {x: 4.917228, y: 4.917228, z: 4.917228}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 244951751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.02, y: 2.32}
+  m_AnchoredPosition: {x: 0, y: -1.6}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1814119836
@@ -4700,7 +4840,7 @@ Transform:
   m_GameObject: {fileID: 1951948606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.47, y: 0.02, z: 0}
+  m_LocalPosition: {x: 2.604, y: 0.02, z: 0}
   m_LocalScale: {x: 0.49619, y: 0.49619, z: 0.49619}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4714,7 +4854,6 @@ Transform:
   - {fileID: 917789710}
   - {fileID: 973734613}
   - {fileID: 1129896769}
-  - {fileID: 1428626482}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1951948611
@@ -5392,5 +5531,5 @@ SceneRoots:
   - {fileID: 1312839439}
   - {fileID: 680262600}
   - {fileID: 1951948610}
-  - {fileID: 1742840817}
+  - {fileID: 244951751}
   - {fileID: 1677117437}

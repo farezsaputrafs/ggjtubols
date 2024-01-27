@@ -11,6 +11,7 @@ public class BasicMovement : MonoBehaviour
 
     [SerializeField]
     private bool inputEnabled = true;
+    
     // Start is called before the first frame update
     void Start() {
         
@@ -20,27 +21,6 @@ public class BasicMovement : MonoBehaviour
     void Update() {
         DetectInputAndAddForcev1();
 
-    }
-    private void DetectInputAndAddForcev2(){
-        if (p1OrP2 == P1orP2.P1){
-            if (inputEnabled){
-                foreach (Rigidbody2D item in rigidbody2Ds){
-                if (Input.GetKey(KeyCode.A))
-                    item.AddForce(Vector2.left * speedMultiplier);
-                if (Input.GetKey(KeyCode.D))
-                    item.AddForce(Vector2.right * speedMultiplier);
-                if (Input.GetKey(KeyCode.W))
-                    item.AddForce(Vector2.up * speedMultiplier);
-                if (Input.GetKey(KeyCode.S))
-                    item.AddForce(Vector2.down * speedMultiplier);
-                }
-            }
-        }
-        else{
-            if (inputEnabled){
-                
-            }
-        }
     }
     private void DetectInputAndAddForcev1(){
         if (p1OrP2 == P1orP2.P1){
@@ -69,35 +49,76 @@ public class BasicMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
+    public void Z_ForwardedOnTriggerEnter2D(Collider2D other){
         if (p1OrP2 == P1orP2.P1){
-            Debug.Log($"p1 got p2");
-            if (other.CompareTag("Player 2")){
+            if (other.CompareTag("Player 2 Col")){
+                Debug.Log($"p1 got p2");
                 inputEnabled = false;
-                rb2d.velocity = -rb2d.velocity * 3f;
+                rb2d.velocity = -rb2d.velocity * 10f;
+                other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
             }
         }
         if (p1OrP2 == P1orP2.P2){
-            Debug.Log($"p2 got p1");
-            if (other.CompareTag("Player")){
+            if (other.CompareTag("Player Col")){
+                Debug.Log($"p2 got p1");
                 inputEnabled = false;
-                rb2d.velocity = -rb2d.velocity * 3f;
+                rb2d.velocity = -rb2d.velocity * 10f;
+                other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
+
             }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D other){
+    }
+    public void Z_ForwardedOnTriggerExit2D(Collider2D other){
         if (p1OrP2 == P1orP2.P1)
-            if (other.CompareTag("Player 2")){
+            if (other.CompareTag("Player 2 Col")){
+                Debug.Log($"p1 left p2");
                 inputEnabled = true;
                 Debug.Log($"p1 exiting p2");
+
             }
         if (p1OrP2 == P1orP2.P2)
-            if (other.CompareTag("Player")){
+            if (other.CompareTag("Player Col")){
+                Debug.Log($"p2 left p1");
                 inputEnabled = true;
                 Debug.Log($"p2 exiting p1");
+
             }
+
     }
+    // private void OnTriggerEnter2D(Collider2D other){
+    //     if (p1OrP2 == P1orP2.P1){
+    //         Debug.Log($"p1 got p2");
+    //         if (other.CompareTag("Player 2 Col") && canDetectTrigger){
+    //             inputEnabled = false;
+    //             rb2d.velocity = -rb2d.velocity * 3f;
+    //             canDetectTrigger = false;
+    //         }
+    //     }
+    //     if (p1OrP2 == P1orP2.P2){
+    //         Debug.Log($"p2 got p1");
+    //         if (other.CompareTag("Player Col") && canDetectTrigger){
+    //             inputEnabled = false;
+    //             rb2d.velocity = -rb2d.velocity * 3f;
+    //             canDetectTrigger = false;
+    //         }
+    //     }
+    // }
+
+    // private void OnTriggerExit2D(Collider2D other){
+    //     if (p1OrP2 == P1orP2.P1)
+    //         if (other.CompareTag("Player 2 Col") && !canDetectTrigger){
+    //             inputEnabled = true;
+    //             Debug.Log($"p1 exiting p2");
+    //             canDetectTrigger = true;
+    //         }
+    //     if (p1OrP2 == P1orP2.P2)
+    //         if (other.CompareTag("Player Col") && !canDetectTrigger){
+    //             inputEnabled = true;
+    //             Debug.Log($"p2 exiting p1");
+    //             canDetectTrigger = true;
+    //         }
+    // }
 }
 
 public enum P1orP2{

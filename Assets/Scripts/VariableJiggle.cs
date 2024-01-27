@@ -19,7 +19,7 @@ public class VariableJiggle : MonoBehaviour
     void Update()
     {
         if (Vector2.Distance(rb2d.velocity, peakSpeedVelocity) > peakSpeedVelocityFloat){
-            Debug.Log($"2fast");
+            // Debug.Log($"2fast");
             // springJoint1.dampingRatio = playerScriptableObjectsVariable.peakSpeedDampingRatio;
             // springJoint1.frequency = playerScriptableObjectsVariable.peakSpeedFrequency;
             // springJoint2.dampingRatio = playerScriptableObjectsVariable.peakSpeedDampingRatio;
@@ -31,7 +31,7 @@ public class VariableJiggle : MonoBehaviour
             }
         } 
         else {
-            Debug.Log($"2slow");
+            // Debug.Log($"2slow");
             // springJoint1.dampingRatio = playerScriptableObjectsVariable.dampingRatio;
             // springJoint1.frequency = playerScriptableObjectsVariable.frequency;
             // springJoint2.dampingRatio = playerScriptableObjectsVariable.dampingRatio;

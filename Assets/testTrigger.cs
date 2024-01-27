@@ -13,14 +13,12 @@ public class testTrigger : MonoBehaviour
     [SerializeField]
     private bool inputEnabled = true;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
     public void OnTriggerEnter2D(Collider2D other){

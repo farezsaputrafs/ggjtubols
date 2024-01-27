@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
+    public BombSystem bombSystem;
     public Rigidbody2D rb2d;
     public Rigidbody2D[] rigidbody2Ds;
     public float speedMultiplier;
@@ -21,7 +22,6 @@ public class BasicMovement : MonoBehaviour
     // Update is called once per frame
     void Update() {
         DetectInputAndAddForcev1();
-
     }
     private void DetectInputAndAddForcev1(){
         if (p1OrP2 == P1orP2.P1){
@@ -53,40 +53,59 @@ public class BasicMovement : MonoBehaviour
     public void Z_ForwardedOnTriggerEnter2D(Collider2D other){
         if (p1OrP2 == P1orP2.P1){
             if (other.CompareTag("Player 2 Col")){
-                Debug.Log($"p1 got p2");
+                // Debug.Log($"p1 got p2");
                 inputEnabled = false;
                 rb2d.velocity = -rb2d.velocity * bouncebackMultiplier;
-                other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
-                other.GetComponentInParent<BasicMovement>().rb2d.velocity = rb2d.velocity;
+                // other.GetComponentInParent<BasicMovement>().rb2d.velocity = rb2d.velocity;
                 // other.attachedRigidbody.velocity = rb2d.velocity;
+
+                if (bombSystem.whoHasTheBomb == WhoHasTheBomb.P1HasTheBomb){
+                    bombSystem.whoHasTheBomb = WhoHasTheBomb.P2HasTheBomb;
+                }
+                else {
+                    Debug.Log($"asdfg");
+                    bombSystem.whoHasTheBomb = WhoHasTheBomb.P1HasTheBomb;
+                }
+                // other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
             }
         }
         if (p1OrP2 == P1orP2.P2){
             if (other.CompareTag("Player Col")){
-                Debug.Log($"p2 got p1");
+                // Debug.Log($"p2 got p1");
                 inputEnabled = false;
                 rb2d.velocity = -rb2d.velocity * bouncebackMultiplier;
-                other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
-                other.GetComponentInParent<BasicMovement>().rb2d.velocity = rb2d.velocity;
+                // other.GetComponentInParent<BasicMovement>().rb2d.velocity = rb2d.velocity;
                 // other.transform.GetComponent<Rigidbody2D>().velocity = rb2d.velocity;
+
+                // if (bombSystem.whoHasTheBomb == WhoHasTheBomb.P2HasTheBomb){
+                //     Debug.Log($"asdfg");
+                //     bombSystem.whoHasTheBomb = WhoHasTheBomb.P1HasTheBomb;
+                // }
+                // other.GetComponent<BasicMovement>().rb2d.velocity = rb2d.velocity;
             }
         }
 
+        // if (p1OrP2 == P1orP2.P1){
+        //     if (other.CompareTag("Player 2 Col")){
+                
+        //     }
+        // }
+        // else {
+        //     if (other.CompareTag("Player Col")){
+                
+        //     }
+        // }
     }
     public void Z_ForwardedOnTriggerExit2D(Collider2D other){
         if (p1OrP2 == P1orP2.P1)
             if (other.CompareTag("Player 2 Col")){
-                Debug.Log($"p1 left p2");
+                // Debug.Log($"p1 left p2");
                 inputEnabled = true;
-                Debug.Log($"p1 exiting p2");
-
             }
         if (p1OrP2 == P1orP2.P2)
             if (other.CompareTag("Player Col")){
-                Debug.Log($"p2 left p1");
+                // Debug.Log($"p2 left p1");
                 inputEnabled = true;
-                Debug.Log($"p2 exiting p1");
-
             }
 
     }

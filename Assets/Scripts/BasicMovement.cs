@@ -6,7 +6,7 @@ public class BasicMovement : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     public float speedMultiplier;
-    public P1orP2 p1RrP2= P1orP2.P1;
+    public P1orP2 p1RrP2 = P1orP2.P1;
     // Start is called before the first frame update
     void Start() {
         

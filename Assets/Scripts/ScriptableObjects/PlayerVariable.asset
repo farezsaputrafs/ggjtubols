@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0f2edd6b4de5c4da2d579f278068f6, type: 3}
   m_Name: PlayerVariable
   m_EditorClassIdentifier: 
-  dampingRatio: 0.1
-  frequency: 1
-  peakSpeedDampingRatio: 0.5
-  peakSpeedFrequencyRatio: 5
+  dampingRatio: 0.5
+  frequency: 5
+  peakSpeedDampingRatio: 0.1
+  peakSpeedFrequency: 1

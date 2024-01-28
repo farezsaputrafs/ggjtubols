@@ -3,6 +3,8 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 /[Ll]ibrary/
+/Library/SourceAssetDB
+/Library/ArtifactDB
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
